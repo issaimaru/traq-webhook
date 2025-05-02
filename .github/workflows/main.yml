@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: post to traQ
-      uses: issaimaru/traq-webhook@v5
+      uses: issaimaru/traq-webhook@v1.0
       with:
         webhook-id: ${{ secrets.WEBHOOK_ID }}
         auto-generate-message: true
