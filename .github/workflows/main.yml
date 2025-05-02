@@ -1,0 +1,25 @@
+on:
+  push:
+  issues:
+    types: [opened, edited, closed, reopened]
+  issue_comment:
+    types: [created, edited]
+  pull_request:
+    types: [opened, edited, closed, review_requested]
+  pull_request_review:
+    types: [submitted]
+  release:
+    types: [released]
+  create:
+
+permissions: read-all
+
+jobs:
+  webhook:
+    runs-on: ubuntu-latest
+    steps:
+    - name: post to traQ
+      uses: issaimaru/traq-webhook@v5
+      with:
+        webhook-id: ${{ secrets.WEBHOOK_ID }}
+        auto-generate-message: true
