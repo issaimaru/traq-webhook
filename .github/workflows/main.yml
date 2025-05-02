@@ -22,4 +22,5 @@ jobs:
       uses: issaimaru/traq-webhook@v1.0
       with:
         webhook-id: ${{ secrets.WEBHOOK_ID }}
-        auto-generate-message: true
+        message: 'Test'
+        auto-generate-message: false
